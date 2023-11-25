@@ -50,30 +50,45 @@ Flowers18 = imread('D:\FEKT\SEP\Flowers\Flowers18JPG.bmp');
 
 %calculating MS-SSIM
 [MSssimval1A,~] = multissim(Atacama1,refA);
-MSssimval1A = single(MSssimval1A);
+MSssimval1A = mean(MSssimval1A);
 [MSssimval4A,~] = multissim(Atacama4,refA);
-MSssimval4A = single(MSssimval4A);
+MSssimval4A = mean(MSssimval4A);
 [MSssimval5A,~] = multissim(Atacama5,refA);
-MSssimval5A = single(MSssimval5A);
+MSssimval5A = mean(MSssimval5A);
 [MSssimval7A,~] = multissim(Atacama7,refA);
-MSssimval7A = single(MSssimval7A);
+MSssimval7A = mean(MSssimval7A);
 [MSssimval9A,~] = multissim(Atacama9,refA);
-MSssimval9A = single(MSssimval9A);
+MSssimval9A = mean(MSssimval9A);
 [MSssimval13A,~] = multissim(Atacama13,refA);
-MSssimval13A = single(MSssimval13A);
+MSssimval13A = mean(MSssimval13A);
 
 [MSssimval1F,~] = multissim(Flowers1,refF);
-MSssimval1F = single(MSssimval1F);
+MSssimval1F = mean(MSssimval1F);
 [MSssimval4F,~] = multissim(Flowers4,refF);
-MSssimval4F = single(MSssimval4F);
+MSssimval4F = mean(MSssimval4F);
 [MSssimval6F,~] = multissim(Flowers6,refF);
-MSssimval6F = single(MSssimval6F);
+MSssimval6F = mean(MSssimval6F);
 [MSssimval9F,~] = multissim(Flowers9,refF);
-MSssimval9F = single(MSssimval9F);
+MSssimval9F = mean(MSssimval9F);
 [MSssimval12F,~] = multissim(Flowers12,refF);
-MSssimval12F = single(MSssimval12F);
+MSssimval12F = mean(MSssimval12F);
 [MSssimval18F,~] = multissim(Flowers18,refF);
-MSssimval18F = single(MSssimval18F)
+MSssimval18F = mean(MSssimval18F)
+
+%calculating niqe
+NIQE1A = niqe(Atacama1);
+NIQE4A = niqe(Atacama1);
+NIQE5A = niqe(Atacama1);
+NIQE7A = niqe(Atacama1);
+NIQE9A = niqe(Atacama1);
+NIQE13A = niqe(Atacama1);
+
+NIQE1F = niqe(Flowers1);
+NIQE4F = niqe(Flowers4);
+NIQE6F = niqe(Flowers6);
+NIQE9F = niqe(Flowers9);
+NIQE12F = niqe(Flowers12);
+NIQE18F = niqe(Flowers18);
 
 
 %%values for X
@@ -99,6 +114,8 @@ SF = [ssimval1F, ssimval4F, ssimval6F, ssimval9F, ssimval12F, ssimval18F ];
 MSA = [MSssimval1A, MSssimval4A, MSssimval5A, MSssimval7A, MSssimval9A, MSssimval13A ];
 MSF = [MSssimval1F, MSssimval4F, MSssimval6F, MSssimval9F, MSssimval12F, MSssimval18F ];
 
+NA = [NIQE1A, NIQE4A, NIQE5A, NIQE7A, NIQE9A, NIQE13A ];
+NF = [NIQE1F, NIQE4F, NIQE6F, NIQE9F, NIQE12F, NIQE18F];
 
 figure(1)
 subplot(2,3,1);
@@ -125,6 +142,14 @@ hold on
 plot(X,MSF,'-+')
 hold off
 xlabel('BPP')
-ylabel('SSIM[dB]')
+ylabel('MS-SSIM[dB]')
+
+subplot(2,3,4);
+plot(X,NA,'-+')
+hold on
+plot(X,NF,'-+')
+hold off
+xlabel('BPP')
+ylabel('Niqe[dB]')
 
 
