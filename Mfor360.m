@@ -73,7 +73,7 @@ MSssimval9F = mean(MSssimval9F);
 [MSssimval12F,~] = multissim(Flowers12,refF);
 MSssimval12F = mean(MSssimval12F);
 [MSssimval18F,~] = multissim(Flowers18,refF);
-MSssimval18F = mean(MSssimval18F)
+MSssimval18F = mean(MSssimval18F);
 
 %calculating niqe
 NIQE1A = niqe(Atacama1);
@@ -89,6 +89,36 @@ NIQE6F = niqe(Flowers6);
 NIQE9F = niqe(Flowers9);
 NIQE12F = niqe(Flowers12);
 NIQE18F = niqe(Flowers18);
+
+%calculating brisque
+BRISQUE1A = brisque(Atacama1);
+BRISQUE4A = brisque(Atacama1);
+BRISQUE5A = brisque(Atacama1);
+BRISQUE7A = brisque(Atacama1);
+BRISQUE9A = brisque(Atacama1);
+BRISQUE13A = brisque(Atacama1);
+
+BRISQUE1F = brisque(Flowers1);
+BRISQUE4F = brisque(Flowers4);
+BRISQUE6F = brisque(Flowers6);
+BRISQUE9F = brisque(Flowers9);
+BRISQUE12F = brisque(Flowers12);
+BRISQUE18F = brisque(Flowers18);
+
+%calculating piqe
+PIQE1A = piqe(Atacama1);
+PIQE4A = piqe(Atacama1);
+PIQE5A = piqe(Atacama1);
+PIQE7A = piqe(Atacama1);
+PIQE9A = piqe(Atacama1);
+PIQE13A = piqe(Atacama1);
+
+PIQE1F = piqe(Flowers1);
+PIQE4F = piqe(Flowers4);
+PIQE6F = piqe(Flowers6);
+PIQE9F = piqe(Flowers9);
+PIQE12F = piqe(Flowers12);
+PIQE18F = piqe(Flowers18);
 
 
 %%values for X
@@ -117,6 +147,13 @@ MSF = [MSssimval1F, MSssimval4F, MSssimval6F, MSssimval9F, MSssimval12F, MSssimv
 NA = [NIQE1A, NIQE4A, NIQE5A, NIQE7A, NIQE9A, NIQE13A ];
 NF = [NIQE1F, NIQE4F, NIQE6F, NIQE9F, NIQE12F, NIQE18F];
 
+BRIA = [BRISQUE1A, BRISQUE4A, BRISQUE5A, BRISQUE7A, BRISQUE9A, BRISQUE13A ];
+BRIF = [BRISQUE1F, BRISQUE4F, BRISQUE6F, BRISQUE9F, BRISQUE12F, BRISQUE18F];
+
+PIQA = [PIQE1A, PIQE4A, PIQE5A, PIQE7A, PIQE9A, PIQE13A ];
+PIQF = [PIQE1F, PIQE4F, PIQE6F, PIQE9F, PIQE12F, PIQE18F];
+
+
 figure(1)
 subplot(2,3,1);
 plot(X,PA,'-+')
@@ -135,7 +172,6 @@ hold off
 xlabel('BPP')
 ylabel('SSIM[dB]')
 
-
 subplot(2,3,3);
 plot(X,MSA,'-+')
 hold on
@@ -151,5 +187,21 @@ plot(X,NF,'-+')
 hold off
 xlabel('BPP')
 ylabel('Niqe[dB]')
+
+subplot(2,3,5);
+plot(X,BRIA,'-+')
+hold on
+plot(X,BRIF,'-+')
+hold off
+xlabel('BPP')
+ylabel('Brique[dB]')
+
+subplot(2,3,6);
+plot(X,PIQA,'-+')
+hold on
+plot(X,PIQF,'-+')
+hold off
+xlabel('BPP')
+ylabel('Piqe[dB]')
 
 
