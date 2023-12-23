@@ -1,0 +1,4 @@
+ekvirektangularni projekce https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.nitishmutha.com%2Fequirectangular%2F360degree%2F2017%2F06%2F12%2FHow-to-project-Equirectangular-image-to-rectilinear-view.html&psig=AOvVaw2yLG8zxrgopStbP3Wtk8-b&ust=1703261991961000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKCbsMf3oIMDFQAAAAAdAAAAABAY
+cylindricka projekce https://dev.luciad.com/portal/reference/LuciadLightspeed/com/luciad/projection/doc-files/polyconic.png
+kubicka projekce https://www.researchgate.net/profile/Deyang-Liu/publication/328011848/figure/fig4/AS:791220439773184@1565653061599/The-mapping-and-unfolded-process-of-cube-map-projection.png
+JPEG codec diagram https://www.researchgate.net/publication/267377961/figure/fig1/AS:650856798113793@1532187761564/JPEG-Codec-Block-Diagram.png
