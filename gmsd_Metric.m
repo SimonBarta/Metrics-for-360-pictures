@@ -32,8 +32,8 @@ GMSD14H = GMSD(refH, Hokkaido14);
 
 X = [0.3, 0.4, 0.5, 0.6, 0.7, 0.9];
 
-FSIMF = [GMSD1F, GMSD4F, GMSD6F, GMSD9F, GMSD12F,GMSD18F];
-FSIMH = [GMSD1H, GMSD4H, GMSD6H, GMSD8H, GMSD10H,GMSD14H];
+GDSMF = [GMSD1F, GMSD4F, GMSD6F, GMSD9F, GMSD12F,GMSD18F];
+GDSMH = [GMSD1H, GMSD4H, GMSD6H, GMSD8H, GMSD10H,GMSD14H];
 
 
 
@@ -42,6 +42,7 @@ plot(X,GDSMF,'b-+')
 hold on
 plot(X,GDSMH,'r-+')
 hold off
+legend({'Flowers', '02Hokkaido'},'Location','east')
 xlabel('BPP')
-ylabel('FSIM[dB]')
+ylabel('GDSM[-]')
 

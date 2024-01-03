@@ -39,19 +39,18 @@ FSIMcF = [FSIMc1F, FSIMc4F, FSIMc6F, FSIMc9F, FSIMc12F,FSIMc18F];
 FSIMcH = [FSIMc1H, FSIMc4H, FSIMc6H, FSIMc8H, FSIMc10H,FSIMc14H];
 
 figure(1)
-subplot(1,2,1);
 plot(X,FSIMF,'b-+')
 hold on
 plot(X,FSIMH,'r-+')
-hold off
+legend({'Flowers', '02Hokkaido'},'Location','southeast')
 xlabel('BPP')
-ylabel('FSIM[dB]')
+ylabel('FSIM[-]')
 
 
-subplot(1,2,2);
+figure(2)
 plot(X,FSIMcF,'b-+')
 hold on
 plot(X,FSIMcH,'r-+')
-hold off
+legend({'Flowers', '02Hokkaido'},'Location','southeast')
 xlabel('BPP')
-ylabel('FSIMc[dB]')
+ylabel('FSIMc[-]')

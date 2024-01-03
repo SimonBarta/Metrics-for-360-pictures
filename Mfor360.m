@@ -1,16 +1,8 @@
 
 %%reading files downloaded from https://zenodo.org/records/7607071
 
-clear all
-refA = imread('D:\FEKT\SEP\Atacama\ref_Atacama.bmp'); %loading ref image
-Atacama1 = imread('D:\FEKT\SEP\Atacama\Atacama1JPG.bmp');
-Atacama4 = imread('D:\FEKT\SEP\Atacama\Atacama4JPG.bmp');
-Atacama5 = imread('D:\FEKT\SEP\Atacama\Atacama5JPG.bmp');
-Atacama7 = imread('D:\FEKT\SEP\Atacama\Atacama7JPG.bmp');
-Atacama9 = imread('D:\FEKT\SEP\Atacama\Atacama9JPG.bmp');
-Atacama13 = imread('D:\FEKT\SEP\Atacama\Atacama13JPG.bmp');
-
-refF = imread('D:\FEKT\SEP\Flowers\ref_Flowers.bmp');
+clear all 
+refF = imread('D:\FEKT\SEP\Flowers\ref_Flowers.bmp');%loading ref image
 Flowers1 = imread('D:\FEKT\SEP\Flowers\Flowers1JPG.bmp');
 Flowers4 = imread('D:\FEKT\SEP\Flowers\Flowers4JPG.bmp');
 Flowers6 = imread('D:\FEKT\SEP\Flowers\Flowers6JPG.bmp');
@@ -27,13 +19,6 @@ Hokkaido10 = imread('D:\FEKT\SEP\02Hokkaido\02_Hokkaido10JPG.bmp');
 Hokkaido14 = imread('D:\FEKT\SEP\02Hokkaido\02_Hokkaido14JPG.bmp');
 
 %%calculating peak-signal-to-noise-ration
-[peaksnr1A, ~] = psnr(Atacama1, refA);
-[peaksnr4A, ~] = psnr(Atacama4, refA);
-[peaksnr5A, ~] = psnr(Atacama5, refA);
-[peaksnr7A, ~] = psnr(Atacama7, refA);
-[peaksnr9A, ~] = psnr(Atacama9, refA);
-[peaksnr13A, ~] = psnr(Atacama13, refA); 
-
 [peaksnr1F, ~] = psnr(Flowers1, refF);
 [peaksnr4F, ~] = psnr(Flowers4, refF);
 [peaksnr6F, ~] = psnr(Flowers6, refF);
@@ -49,12 +34,7 @@ Hokkaido14 = imread('D:\FEKT\SEP\02Hokkaido\02_Hokkaido14JPG.bmp');
 [peaksnr14H, ~] = psnr(Hokkaido14, refH);
 
 %calculating SSIM
-[ssimval1A,~] = ssim(Atacama1,refA);
-[ssimval4A,~] = ssim(Atacama4,refA);
-[ssimval5A,~] = ssim(Atacama5,refA);
-[ssimval7A,~] = ssim(Atacama7,refA);
-[ssimval9A,~] = ssim(Atacama9,refA);
-[ssimval13A,~] = ssim(Atacama13,refA);
+
 
 [ssimval1F,~] = ssim(Flowers1,refF);
 [ssimval4F,~] = ssim(Flowers4,refF);
@@ -71,18 +51,7 @@ Hokkaido14 = imread('D:\FEKT\SEP\02Hokkaido\02_Hokkaido14JPG.bmp');
 [ssimval14H,~] = ssim(Hokkaido14, refH);
 
 %calculating MS-SSIM
-[MSssimval1A,~] = multissim(Atacama1,refA);
-MSssimval1A = mean(MSssimval1A);
-[MSssimval4A,~] = multissim(Atacama4,refA);
-MSssimval4A = mean(MSssimval4A);
-[MSssimval5A,~] = multissim(Atacama5,refA);
-MSssimval5A = mean(MSssimval5A);
-[MSssimval7A,~] = multissim(Atacama7,refA);
-MSssimval7A = mean(MSssimval7A);
-[MSssimval9A,~] = multissim(Atacama9,refA);
-MSssimval9A = mean(MSssimval9A);
-[MSssimval13A,~] = multissim(Atacama13,refA);
-MSssimval13A = mean(MSssimval13A);
+
 
 [MSssimval1F,~] = multissim(Flowers1,refF);
 MSssimval1F = mean(MSssimval1F);
@@ -111,12 +80,7 @@ MSssimval10H = mean(MSssimval10H);
 MSssimval14H = mean(MSssimval14H);
 
 %calculating niqe
-NIQE1A = niqe(Atacama1);
-NIQE4A = niqe(Atacama1);
-NIQE5A = niqe(Atacama1);
-NIQE7A = niqe(Atacama1);
-NIQE9A = niqe(Atacama1);
-NIQE13A = niqe(Atacama1);
+
 
 NIQE1F = niqe(Flowers1);
 NIQE4F = niqe(Flowers4);
@@ -133,12 +97,7 @@ NIQE10H = niqe(Hokkaido10);
 NIQE14H = niqe(Hokkaido14);
 
 %calculating brisque
-BRISQUE1A = brisque(Atacama1);
-BRISQUE4A = brisque(Atacama1);
-BRISQUE5A = brisque(Atacama1);
-BRISQUE7A = brisque(Atacama1);
-BRISQUE9A = brisque(Atacama1);
-BRISQUE13A = brisque(Atacama1);
+
 
 BRISQUE1F = brisque(Flowers1);
 BRISQUE4F = brisque(Flowers4);
@@ -155,12 +114,7 @@ BRISQUE10H = niqe(Hokkaido10);
 BRISQUE14H = niqe(Hokkaido14);
 
 %calculating piqe
-PIQE1A = piqe(Atacama1);
-PIQE4A = piqe(Atacama1);
-PIQE5A = piqe(Atacama1);
-PIQE7A = piqe(Atacama1);
-PIQE9A = piqe(Atacama1);
-PIQE13A = piqe(Atacama1);
+
 
 PIQE1F = piqe(Flowers1);
 PIQE4F = piqe(Flowers4);
@@ -191,85 +145,78 @@ PIQE14H = niqe(Hokkaido14);
 
 
 X = [0.3, 0.4, 0.5, 0.6, 0.7, 0.9];
-PA= [peaksnr1A, peaksnr4A, peaksnr5A, peaksnr7A, peaksnr9A, peaksnr13A ];
+
 PF= [peaksnr1F, peaksnr4F, peaksnr6F, peaksnr9F, peaksnr12F, peaksnr18F ];
 PH= [peaksnr1H, peaksnr4H, peaksnr6H, peaksnr8H, peaksnr10H, peaksnr14H ];
 
-SA = [ssimval1A, ssimval4A, ssimval5A, ssimval7A,ssimval9A, ssimval13A ];
+
 SF = [ssimval1F, ssimval4F, ssimval6F, ssimval9F, ssimval12F, ssimval18F ];
 SH = [ssimval1H, ssimval4H, ssimval6H, ssimval8H, ssimval10H, ssimval14H ];
 
-MSA = [MSssimval1A, MSssimval4A, MSssimval5A, MSssimval7A, MSssimval9A, MSssimval13A ];
+
 MSF = [MSssimval1F, MSssimval4F, MSssimval6F, MSssimval9F, MSssimval12F, MSssimval18F ];
 MSH = [MSssimval1H, MSssimval4H, MSssimval6H, MSssimval8H, MSssimval10H, MSssimval14H ];
 
-NA = [NIQE1A, NIQE4A, NIQE5A, NIQE7A, NIQE9A, NIQE13A ];
+
 NF = [NIQE1F, NIQE4F, NIQE6F, NIQE9F, NIQE12F, NIQE18F];
 NH = [NIQE1H, NIQE4H, NIQE6H, NIQE8H, NIQE10H, NIQE14H];
 
-BRIA = [BRISQUE1A, BRISQUE4A, BRISQUE5A, BRISQUE7A, BRISQUE9A, BRISQUE13A ];
+
 BRIF = [BRISQUE1F, BRISQUE4F, BRISQUE6F, BRISQUE9F, BRISQUE12F, BRISQUE18F];
 BRIH = [BRISQUE1H, BRISQUE4H, BRISQUE6H, BRISQUE8H, BRISQUE10H, BRISQUE14H];
 
-PIQA = [PIQE1A, PIQE4A, PIQE5A, PIQE7A, PIQE9A, PIQE13A ];
+
 PIQF = [PIQE1F, PIQE4F, PIQE6F, PIQE9F, PIQE12F, PIQE18F];
 PIQH = [PIQE1H, PIQE4H, PIQE6H, PIQE8H, PIQE10H, PIQE14H];
 
 
 figure(1)
-subplot(2,3,1);
-plot(X,PA,'b-+')
-hold on
 plot(X,PF,'r-+')
-plot(X,PH,'g-+')
-hold off
+hold on
+plot(X,PH,'b-+')
+legend({'Flowers', '02Hokkaido'},'Location','southeast')
 xlabel('BPP')
 ylabel('PSNR[dB]')
 
 
-subplot(2,3,2);
-plot(X,SA,'b-+')
-hold on
+figure(2)
 plot(X,SF,'r-+')
-plot(X,SH,'g-+')
-hold off
-xlabel('BPP')
-ylabel('SSIM[dB]')
-
-subplot(2,3,3);
-plot(X,MSA,'b-+')
 hold on
+plot(X,SH,'b-+')
+legend({'Flowers', '02Hokkaido'},'Location','southeast')
+xlabel('BPP')
+ylabel('SSIM[-]')
+
+figure(3)
 plot(X,MSF,'r-+')
-plot(X,MSH,'g-+')
-hold off
-xlabel('BPP')
-ylabel('MS-SSIM[dB]')
-
-subplot(2,3,4);
-plot(X,NA,'b-+')
 hold on
+plot(X,MSH,'b-+')
+legend({'Flowers', '02Hokkaido'},'Location','southeast')
+xlabel('BPP')
+ylabel('MS-SSIM[-]')
+
+figure(4)
 plot(X,NF,'r-+')
-plot(X,NH,'g-+')
-hold off
-xlabel('BPP')
-ylabel('Niqe[dB]')
-
-subplot(2,3,5);
-plot(X,BRIA,'b-+')
 hold on
+plot(X,NH,'b-+')
+legend({'Flowers', '02Hokkaido'},'Location','southeast')
+xlabel('BPP')
+ylabel('Niqe[-]')
+
+figure(5)
 plot(X,BRIF,'r-+')
-plot(X,BRIH,'g-+')
-hold off
-xlabel('BPP')
-ylabel('Brique[dB]')
-
-subplot(2,3,6);
-plot(X,PIQA,'b-+')
 hold on
-plot(X,PIQF,'r-+')
-plot(X,PIQH,'g-+')
-hold off
+plot(X,BRIH,'b-+')
+legend({'Flowers', '02Hokkaido'},'Location','east')
 xlabel('BPP')
-ylabel('Piqe[dB]')
+ylabel('Brique[-]')
+
+figure(6)
+plot(X,PIQF,'r-+')
+hold on
+plot(X,PIQH,'b-+')
+legend({'Flowers', '02Hokkaido'},'Location','east')
+xlabel('BPP')
+ylabel('Piqe[-]')
 
 
