@@ -3,3 +3,8 @@ GMSD: https://www.mathworks.com/matlabcentral/fileexchange/75285-image-quality-a
 Niqe: https://www.mathworks.com/help/images/ref/niqe.html
 Brisqe: https://www.mathworks.com/help/images/ref/brisque.html
 Piqe: https://www.mathworks.com/help/images/ref/piqe.html
+
+
+https://ieeexplore.ieee.org/abstract/document/9432968
+https://www.sciencedirect.com/science/article/abs/pii/S0030402621005635
+https://ojs.aaai.org/index.php/AAAI/article/view/19937
